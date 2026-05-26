@@ -2,6 +2,7 @@ package main
 
 import (
 	"backend/config"
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -46,7 +47,14 @@ func main() {
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("Server is running "))
+
+	    response:= map[string]interface{}{
+			"status": 201,
+			"PORT": cfg.PORT,
+			"secret": cfg.SECRET,
+		}
+
+		json.NewEncoder(w).Encode(response)
 	})
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {

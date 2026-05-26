@@ -1,0 +1,9 @@
+replicaCount: 2
+
+image:
+  repository: nirmal08/ci-3-tier
+  tag: "29a5bf4ee6271882e6060d6d00b3206dd1c64878"
+
+service:
+  type: LoadBalancer
+  port: 80

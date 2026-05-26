@@ -8,6 +8,7 @@ import (
 
 type Config struct {
 	PORT string
+	SECRET string
 }
 
 func Load() (*Config, error) {
@@ -20,8 +21,10 @@ func Load() (*Config, error) {
 	if port == "" {
 		port = "8000"
 	}
+	secret:= os.Getenv("SECRET")
 
 	return &Config{
 		PORT: port,
+		SECRET: secret,
 	}, nil
 }
