@@ -46,3 +46,18 @@ jobs:
         run: |
           docker push $IMAGE_NAME:$IMAGE_TAG
           docker push $IMAGE_NAME:latest
+
+      
+      - name: Update Helm values
+        run: |
+          sed -i "s/tag:.*/tag: \"$IMAGE_TAG\"/" helm/gitops/values.yaml
+
+      - name: Commit and Push Helm changes
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+
+          git add helm/gitops/values.yaml
+          git commit -m "Update image tag to $IMAGE_TAG" || echo "No changes"
+
+          git push origin dev

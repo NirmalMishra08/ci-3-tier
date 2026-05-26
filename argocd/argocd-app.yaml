@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/NirmalMishra08/ci-3-tier.git
-    targetRevision: HEAD
+    targetRevision: dev
     path: helm/gitops
 
   destination:
