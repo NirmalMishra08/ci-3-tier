@@ -9,9 +9,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/NirmalMishra08/YOUR_REPO.git
+    repoURL: https://github.com/NirmalMishra08/ci-3-tier.git
     targetRevision: HEAD
-    path: helm/backend
+    path: helm/gitops
 
   destination:
     server: https://kubernetes.default.svc

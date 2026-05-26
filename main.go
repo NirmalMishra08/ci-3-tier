@@ -49,7 +49,7 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 
 	    response:= map[string]interface{}{
-			"status": 200,
+			"status": 201,
 			"PORT": cfg.PORT,
 			"secret": cfg.SECRET,
 		}
