@@ -1,7 +1,14 @@
 name: Backend CI/CD
+
+permissions:
+  contents: write
+
 on:
   push:
     branches: [dev]
+  
+ 
+
 
 env:
   IMAGE_NAME: nirmal08/ci-3-tier
